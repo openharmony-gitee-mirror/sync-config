@@ -3,6 +3,10 @@ on:
   schedule:
     # Runs at 20:00 UTC (4:00 AM Beijing) every day
     - cron:  '0 20 * * *'
+  repository_dispatch:
+    types:
+      - humen_api_trigger
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,4 +22,5 @@ jobs:
         account_type: org
         clone_style: ssh
         force_update: true
-        black_list: "community"
+        timeout: 30m
+
