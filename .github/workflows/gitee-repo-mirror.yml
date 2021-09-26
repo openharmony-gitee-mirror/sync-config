@@ -11,6 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Cache bare repo data
+      uses: actions/cache@v2
+      with:
+        path: /home/runner/work/code_data
+        key: ${{ runner.os }}-bare-repo-cache
+        
     - name: Mirror the gitee/openharmony org repos to github/openharmony-gitee-mirror.
       uses: OpenHarmonySCM-noreply/hub-mirror-action@master
       with:
@@ -23,4 +29,5 @@ jobs:
         clone_style: ssh
         force_update: true
         timeout: 30m
+        cache_path: /github/workspace/code_data
 
