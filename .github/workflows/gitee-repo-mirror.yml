@@ -31,6 +31,6 @@ jobs:
         timeout: 30m
         cache_path: /github/workspace/hub-mirror-cache
     - name: Print cache path
-        run:|
-          ls -la ${{ github.workspace }}/hub-mirror-cache
+      run: |
+        ls -la ${{ github.workspace }}/hub-mirror-cache
 
