@@ -29,5 +29,5 @@ jobs:
         clone_style: ssh
         force_update: true
         timeout: 30m
-        cache_path: /github/workspace/code_data
+        cache_path: /hub-mirror-shell/project-objects
 
