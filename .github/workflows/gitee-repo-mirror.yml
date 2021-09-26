@@ -14,7 +14,7 @@ jobs:
     - name: Cache bare repo data
       uses: actions/cache@v2
       with:
-        path: /hub-mirror-shell/project-objects/
+        path: ${{ github.workspace }}/hub-mirror-cache
         key: ${{ runner.os }}-bare-repo-cache
         
     - name: Mirror the gitee/openharmony org repos to github/openharmony-gitee-mirror.
@@ -29,5 +29,8 @@ jobs:
         clone_style: ssh
         force_update: true
         timeout: 30m
-        cache_path: /hub-mirror-shell/project-objects
+        cache_path: /github/workspace/hub-mirror-cache
+    - name: Print cache path
+        run: |
+          ls -la ${{ github.workspace }}/hub-mirror-cache
 
