@@ -14,7 +14,7 @@ jobs:
     - name: Cache bare repo data
       uses: actions/cache@v2
       with:
-        path: /home/runner/work/code_data
+        path: /hub-mirror-shell/project-objects/
         key: ${{ runner.os }}-bare-repo-cache
         
     - name: Mirror the gitee/openharmony org repos to github/openharmony-gitee-mirror.
