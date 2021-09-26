@@ -29,6 +29,7 @@ jobs:
         clone_style: ssh
         force_update: true
         timeout: 30m
+        debug: false
         cache_path: ${{ github.workspace }}/hub-mirror-cache
     - name: Print cache path
       run: |
