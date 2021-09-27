@@ -15,7 +15,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ github.workspace }}/hub-mirror-cache/project-objects
-        key: ${{ runner.os }}-bare-repo-cache
+        key: ${{ runner.os }}-bare-repo-cache-20210927
         
     - name: Mirror the gitee/openharmony org repos to github/openharmony-gitee-mirror.
       uses: OpenHarmonySCM-noreply/hub-mirror-action@master
